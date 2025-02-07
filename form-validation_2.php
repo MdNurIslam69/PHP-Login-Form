@@ -110,46 +110,53 @@ if (isset($_POST['signUp'])) {
 ?>
 
 
+<!-- css section start -->
+
 <style>
-fieldset {
-    border-radius: 15px;
-    border: 2px double purple;
+    fieldset {
+        border-radius: 15px;
+        border: 2px double purple;
 
-}
+    }
 
-h3 {
-    font-size: 34px;
-    text-decoration: underline;
-}
+    h3 {
+        font-size: 34px;
+        text-decoration: underline;
+    }
 
-.form-div {
-    display: inline-block;
-    margin: auto;
-    justify-content: center;
-    display: grid;
-}
+    .form-div {
+        display: inline-block;
+        margin: auto;
+        justify-content: center;
+        display: grid;
+    }
 
-.showData-div {
-    margin-top: 30px;
-    color: green;
-}
+    .showData-div {
+        margin-top: 30px;
+        color: green;
+    }
 
-button {
-    margin: auto;
-    display: grid;
-    padding: 8px 25px;
-    background-color: aqua;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 13px;
-}
+    button {
+        margin: auto;
+        display: grid;
+        padding: 8px 25px;
+        background-color: aqua;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 13px;
+    }
 
-button:hover {
-    background-color: black;
-    color: white;
-    transition: 1s;
-}
+    button:hover {
+        background-color: black;
+        color: white;
+        transition: 1s;
+    }
 </style>
+<!-- css section end -->
+
+
+
+<!-- main form section start -->
 
 <div class="form-div">
 
@@ -214,9 +221,9 @@ button:hover {
             <select name="country">
                 <option value="">Select Country</option>
                 <?php foreach ($countries as $allCountryName) { ?>
-                <option value="<?= $allCountryName ?>"
-                    <?= isset($countryName) && $countryName == $allCountryName ? "selected" : null ?>>
-                    <?= $allCountryName ?></option>
+                    <option value="<?= $allCountryName ?>"
+                        <?= isset($countryName) && $countryName == $allCountryName ? "selected" : null ?>>
+                        <?= $allCountryName ?></option>
                 <?php } ?>
             </select>
             <?= $countryErr ?? null  ?>
@@ -243,3 +250,5 @@ button:hover {
         <?= $showData ?? null ?>
     </div>
 </div>
+
+<!-- main form section end -->
